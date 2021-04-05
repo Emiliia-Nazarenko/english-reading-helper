@@ -1,6 +1,4 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -21,9 +19,9 @@ public class ReaderHelper {
     private JButton translatedButton;
     private JButton remainingButton;
     private JButton cleanButton;
-    private static Queue<String> wordsQ = new ArrayDeque<>();
-    private static TreeSet<String> words = new TreeSet<>();
-    private static List<String> translatedWords = new ArrayList<>();
+    private Queue<String> wordsQ = new ArrayDeque<>();
+    private TreeSet<String> words = new TreeSet<>();
+    private List<String> translatedWords = new ArrayList<>();
 
     public ReaderHelper() {
 
@@ -105,14 +103,11 @@ public class ReaderHelper {
                         "File '" + saver.getSelectedFile() + ".txt' is downloaded");
             }
         });
-        cleanButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                bookText.setText(null);
-                wordsArea.setText(null);
-                word.setText(null);
-                translation.setText(null);
-            }
+        cleanButton.addActionListener(e -> {
+            bookText.setText(null);
+            wordsArea.setText(null);
+            word.setText(null);
+            translation.setText(null);
         });
     }
 
