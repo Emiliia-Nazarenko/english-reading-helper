@@ -1,4 +1,4 @@
-# English Reader Helper
+# English Reading Helper
 
 This program is for reding books and texts in English. After loading the text, it is divided into words.  
 - If you do not know the word - you can enter its translation and save.  
